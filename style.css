@@ -1,0 +1,68 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background: #121212;
+    color: #ffffff; 
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; 
+}
+
+#heartImage {
+    display: block;
+    margin: 20px auto; 
+    width: 100px; 
+    height: auto;
+}
+
+
+/* Floating hearts animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Drifting hearts animation */
+@keyframes drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(100vw); }
+}
+
+/* Wiggle animation for the yes button */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+.container {
+    position: relative; /* Position relative to contain absolute elements */
+    text-align: center;
+    z-index: 2; /* Ensure the container is above the floating hearts */
+}
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+   transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background-color: #444;
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+#yesBtn {
+    background-color: #28a745; /* Green color for positive action */
+}
+
+#noBtn {
+    background-color: #dc3545; /* Red color for negative action */
+}
